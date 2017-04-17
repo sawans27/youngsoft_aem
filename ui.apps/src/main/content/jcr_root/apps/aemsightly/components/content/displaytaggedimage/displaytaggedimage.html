@@ -1,0 +1,31 @@
+<div data-sly-use.comp="org.youngsoft.bench.core.models.DisplayTaggedImage" class="tag_image">
+	<div data-sly-test.isEditMode="${wcmmode.edit}">
+    	Taggged Image Component.
+    </div>
+	<div class="icon"><img src="${comp.displayTaggedImage @context='uri'}" /></div>
+</div>
+<div data-sly-list="${comp.taggedPage}">
+	${item}
+</div>
+<sly data-sly-use.bannerImages="displaytaggedimage.js">
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	function Randomize() {
+
+		var images = ${bannerImages.bannerImages @context='unsafe'};
+
+		var random = Math.floor(Math.random()*images.length);
+
+		$(".banner_80vh-parallex").css({"background" : "url('/../../" + images[random] + "')"});
+
+	}
+
+
+	Randomize();
+});
+
+
+</script>
