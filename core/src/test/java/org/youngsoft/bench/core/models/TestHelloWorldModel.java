@@ -53,6 +53,7 @@ public class TestHelloWorldModel {
     public void testGetMessage() throws Exception {
         // some very basic junit tests
         String msg = hello.getMessage();
+        String str = hello.getMessage();
         assertNotNull(msg);
         assertTrue(msg.length() > 0);
     }
